@@ -51,12 +51,12 @@ app = Flask(__name__)
 # def home():
 #     return (
 #         f"Available Routes:<br/>"
-#         f"/api/v1.0/data"
+#         f"/api/data"
 #     )
 
 # # Convert the query results to a dictionary using date as the key and prcp as the value
 # # Return the JSON representation of your dictionary
-# @app.route("/api/v1.0/data")
+# @app.route("/api/data")
 def data():
     # Create our session (link) from Python to the DB
     session = Session(engine)

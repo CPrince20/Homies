@@ -1,7 +1,10 @@
 var apiKey = API_KEY;
 
-// var url = "http://127.0.0.1:5000/api/v1.0/data";
-var url = "./Resources/city_join.json"
+// var url = "http://127.0.0.1:5000";
+// var url = "./Resources/city_join.json"
+var proxy_url = "https://cors-anywhere.herokuapp.com/";
+var heroku_url = "https://duong-homies.herokuapp.com/";
+var url = proxy_url + heroku_url
 
 // Fetch the JSON data and console log it
 d3.json(url).then((jsonData) => {

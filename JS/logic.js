@@ -22,10 +22,11 @@ d3.json(url).then((jsonData) => {
         .text(function(i) {return i;})
         .exit().remove()
   
-  // var city_values =[]
-  // for(var i=0; i < city.length; i++){
-  //   city_values = 
-  // }
+  var city_values =[]
+  for(var i=0; i < city.length; i++){
+    city_values += city[i]
+  }
+  console.log(city_values)
   // var gapi_url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + {city} + "," + {state} + "&key=" + {g_key}
   // console.log(gapi_url)
 })

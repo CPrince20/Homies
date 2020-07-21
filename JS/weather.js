@@ -1,24 +1,25 @@
-
-var url = ''
+var apiKey = weather_key
+var qurl = ''
 
 const fetchWeather = () => {
-    axios.get(url)
+    axios.get(qurl)
         .then(function (response){
             //const cityWeather = response;
             console.log(response.data.main.temp);
+            document.getElementById("Anchor_Weather").innerHTML = `Current Temperature ${response.data.main.temp}`
         })
         .catch(error => console.log(error));
 };
 
-d3.select("#selDataset").on("change", function(d) {
+function Weather() {
     // recover the option that has been chosen
     var selectedOption = d3.select(this).node().value
 
-    url = 'http://api.openweathermap.org/data/2.5/weather?q=' + selectedOption + ',US&units=imperial&appid=' + weather_key;
+    qurl = 'http://api.openweathermap.org/data/2.5/weather?q=' + selectedOption + ',US&units=imperial&appid=' + apiKey;
     
     fetchWeather();
     
-});
+};
 
 
 

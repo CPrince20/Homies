@@ -52,6 +52,14 @@ d3.json(url).then((jsonData) => {
     // Add click to zoom and center functionality
     newMarker.on('click', function (clickZoom){
         myMap.setView(clickZoom.target.getLatLng(),12);
+        // var dropdownMenu = d3.select("#selDataset")
+        // dropdownMenu.property("value") = alert(this._leaflet_id)
+        var select = document.getElementById("#selDataset");
+        for(var i = 0;i < city.length;i++){
+            if(select.options[i].value == clickZoom.target.id){
+                select.options[i].selected = true;
+            }
+        }
     })
 
     // Add to map
